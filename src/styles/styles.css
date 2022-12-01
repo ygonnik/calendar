@@ -1,0 +1,441 @@
+.header {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 1440px;
+height: 100px;
+
+/* neutral-100 */
+
+background: #F4F4F4;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.header-container {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+padding: 0px 12px;
+gap: 10px;
+
+width: 1000px;
+height: 100px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.control {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px 0px 20px;
+gap: 10px;
+
+width: 1000px;
+height: 28px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.control-buttons {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 169px;
+height: 26px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.button {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 6px 12px;
+
+width: 56px;
+height: 14px;
+
+/* blue-300 */
+
+background: #0271C7;
+/* button-shadow */
+
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 2px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.button p {
+width: 56px;
+height: 14px;
+
+/* font-button-title */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+/* light-100 */
+
+color: #FFFFFF;
+
+text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+    background: #27A1FF;
+    cursor: pointer;
+}
+
+.button:active {
+    background: #C2E4FE;
+    user-select: none;
+}
+
+.input-area {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 250px;
+height: 28px;
+
+}
+
+.search-img {
+width: 18px;
+height: 18px;
+
+/* neutral-200 */
+
+color: #CFCFCF;
+}
+
+.search-input{
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 6px 12px;
+
+width: 210px;
+height: 28px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* neutral-200 */
+
+border: 1px solid #CFCFCF;
+/* input-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+}
+
+input::placeholder {
+width: 73px;
+height: 16px;
+
+/* font-input-text */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+
+/* neutral-200 */
+
+color: #CFCFCF;
+    
+}
+
+.main {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 1440px;
+height: 700px;
+}
+
+.main-container {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 12px;
+
+width: 1000px;
+height: 700px;
+}
+
+.bottom-row {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 0px;
+gap: 10px;
+
+width: 1000px;
+height: 24px;
+}
+
+.month-control {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 220px;
+height: 24px;
+}
+
+.button-left {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 6px;
+user-select: none;
+
+width: 20px;
+height: 20px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* button-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+transform: rotate(-180deg);
+}
+
+.button-left:hover {
+    background: #6B6B6B;
+}
+
+.button-left:active {
+    background: #CFCFCF;
+}
+
+.button-icon-left {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 20px;
+height: 20px;
+
+transform: rotate(-180deg);
+}
+
+.arrow-left {
+width: 12px;
+height: 15.93px;
+
+/* dark-100 */
+
+color: #6B6B6B;
+transform: rotate(-180deg);
+}
+
+.button-left:hover .arrow-left {
+    filter: invert(99%) sepia(1%) saturate(65%) hue-rotate(235deg) brightness(115%) contrast(100%);
+    user-select: none;
+}
+
+.mounth-control-text-container {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 108px;
+height: 21px;
+}
+
+.mounth-control-text {
+width: 108px;
+height: 21px;
+
+/* font-month */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+}
+
+.button-right {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 6px;
+user-select: none;
+
+width: 20px;
+height: 20px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* button-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+}
+
+.button-right:hover {
+    background: #6B6B6B;
+}
+
+.button-right:active {
+    background: #CFCFCF;
+}
+
+.button-icon-right {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 20px;
+height: 20px;
+}
+
+.arrow-right {
+width: 12px;
+height: 15.93px;
+
+/* dark-100 */
+
+color: #6B6B6B;
+}
+
+.button-right:hover .arrow-right {
+    filter: invert(99%) sepia(1%) saturate(65%) hue-rotate(235deg) brightness(115%) contrast(100%);
+    user-select: none;
+}
+
+.extra-button {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 6px;
+
+width: 47px;
+height: 14px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* button-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+
+}
+
+.extra-button p {
+width: 47px;
+height: 14px;
+
+/* font-button-title */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+
+}
+
+.extra-button:hover {
+background: #6B6B6B;
+cursor:default
+}
+
+.extra-button:hover p {
+color: #FFFFFF;
+}
+
+.extra-button:active {
+background: #CFCFCF;
+cursor:default;
+user-select: none;
+
+}
+
+.extra-button p:active {
+color: #FFFFFF;
+}
