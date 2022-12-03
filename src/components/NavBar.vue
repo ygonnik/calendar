@@ -35,6 +35,482 @@
                     </v-container>
                     <v-btn class="extra-button"><p>Сегодня</p></v-btn>
                 </v-container>
+                <table class="main-table">
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="main-row">
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                        <th class="main-cell">
+                            <div class="cell-heading">
+                                <p>Понедельник</p>
+                            </div>
+                            <div class="cell-title">
+                                <p>Шашлыки</p>
+                            </div>
+                            <div class="cell-description">
+                                <p>Филипп Коров, Дмитрий Табасков</p>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
             </v-container>
         </v-container>
     </v-container>

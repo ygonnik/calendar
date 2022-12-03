@@ -1,0 +1,344 @@
+.overview-popup-container {
+position: absolute;
+width: 300px;
+height: 302px;
+
+filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+}
+
+.overview-decorate {
+position: absolute;
+width: 24px;
+height: 13.55px;
+
+/* light-100 */
+
+filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(207deg) brightness(103%) contrast(101%);
+transform: rotate(-180deg);
+}
+
+.overview-content {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 12px;
+gap: 8px;
+
+position: absolute;
+width: 266.32px;
+height: 278px;
+
+background: #FFFFFF; 
+}
+
+.overview-control {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 0px;
+
+width: 266.32px;
+height: 8px;
+}
+
+.overview-control-icon {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 20px;
+height: 20px;
+}
+
+.overview-control-icon img {
+width: 12px;
+height: 12px;
+
+/* dark-100 */
+
+filter: invert(47%) sepia(0%) saturate(677%) hue-rotate(136deg) brightness(88%) contrast(97%);
+}
+
+.overview-description-container {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+width: 266.32px;
+height: 103px;
+}
+
+.overview-description-title-container {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 266.32px;
+height: 21px;
+}
+
+.overview-description-title-container p {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+margin: 0;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+}
+
+.overview-description-date-container {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 266.32px;
+height: 16px;
+}
+
+.overview-description-date-container p {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+margin: 0;
+/* dark-200 */
+
+color: #292929;
+}
+
+.overview-description-people-container {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0px;
+
+width: 266.32px;
+height: 34px;
+}
+
+.overview-description-people-title {
+width: 72px;
+height: 16px;
+
+/* font-input-text */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+margin:0;
+/* dark-100 */
+
+color: #6B6B6B;
+}
+
+.overview-description-people-content {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+margin:0;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+}
+
+.overview-description-input-container {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 266.32px;
+height: 125px;
+}
+
+.overview-description-input-container input {
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 6px 12px;
+
+width: 266.32px;
+height: 125px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* neutral-200 */
+
+border: 1px solid #CFCFCF;
+/* input-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+}
+
+.overview-description-input-container input::placeholder {
+
+width: 63px;
+height: 16px;
+
+/* font-input-text */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+
+/* neutral-200 */
+
+color: #CFCFCF;
+}
+
+.overview-control-buttons-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 266.32px;
+height: 18px;
+}
+
+.extra-button-ok {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 6px;
+    
+    width: 39px;
+    height: 14px;
+    
+    /* light-100 */
+    
+    background: #FFFFFF;
+    /* button-inner-shadow */
+    
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+
+.extra-button-ok p {
+width: 39px;
+height: 14px;
+
+/* font-button-title */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+}
+
+.extra-button-delete {
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 6px;
+
+width: 47px;
+height: 14px;
+
+/* light-100 */
+
+background: #FFFFFF;
+/* button-inner-shadow */
+
+box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+}
+
+.extra-button-delete p {
+    width: 47px;
+height: 14px;
+
+/* font-button-title */
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+/* dark-200 */
+
+color: #292929;
+}
+
+.extra-button-ok:hover {
+background: #6B6B6B;
+cursor:default
+}
+
+.extra-button-ok:hover p {
+color: #FFFFFF;
+}
+
+.extra-button-ok:active {
+background: #CFCFCF;
+cursor:default;
+user-select: none;
+
+}
+
+.extra-button-ok p:active {
+color: #FFFFFF;
+}
+
+.extra-button-delete:hover {
+background: #6B6B6B;
+cursor:default
+}
+
+.extra-button-delete:hover p {
+color: #FFFFFF;
+}
+
+.extra-button-delete:active {
+background: #CFCFCF;
+cursor:default;
+user-select: none;
+
+}
+
+.extra-button-delete p:active {
+color: #FFFFFF;
+}
