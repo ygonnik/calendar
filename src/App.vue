@@ -1,25 +1,25 @@
 <template>
   <v-app>
-    <NavBar/>
+    <CalendarMain/>
     <!-- <CellPopup/> -->
     <!-- <QuickAddPopup/> -->
-    <OverviewPopup/>
+    <!-- <OverviewPopup/> -->
   </v-app>
 </template>
 
 <script>
 // import CellPopup from './components/CellPopup.vue';
-import NavBar from './components/NavBar.vue';
+import CalendarMain from './components/CalendarMain.vue';
 // import QuickAddPopup from './components/QuickAddPopup.vue';
-import OverviewPopup from './components/OverviewPopup.vue';
+//import OverviewPopup from './components/OverviewPopup.vue';
 export default {
   name: 'App',
 
   components: {
-    NavBar,
+    CalendarMain,
     // CellPopup,
     // QuickAddPopup,
-    OverviewPopup
+    //OverviewPopup
   },
 
   data: () => ({
