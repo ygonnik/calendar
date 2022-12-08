@@ -180,10 +180,6 @@ border-radius: 4px;
 }
 
 input::placeholder {
-width: 73px;
-height: 16px;
-
-/* font-input-text */
 
 font-family: 'Roboto';
 font-style: normal;

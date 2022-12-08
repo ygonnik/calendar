@@ -1,9 +1,9 @@
 <template lang="">
-    <v-container class="quick-add-popup-container">
+    <v-container class="quick-add-popup-container" v-if="QuickAddPopupShow" @click.stop="hideQuickAddPopup">
         <img class="quick-add-decorate" :src="largeArrow"/>
-        <v-container class="quick-add-popup-content-container">
+        <v-container @click.stop class="quick-add-popup-content-container">
             <v-container class="quick-add-frame1">
-                <div class="quick-add-frame1-icon">
+                <div class="quick-add-frame1-icon" @click="hideQuickAddPopup">
                     <img :src="largeCross">
                 </div>
             </v-container>
@@ -19,7 +19,25 @@
 <script>
 import largeArrow from '../../public/largeArrow.png';
 import largeCross from '../../public/largeCross.png';
+import store from '@/store';
 export default {
+    props: {
+        QuickAddPopupShow: {
+            type: Boolean,
+            default: false
+        },
+    },
+    methods: {
+        hideQuickAddPopup() {
+            this.$emit('update:QuickAddPopupShow', false)
+        },
+        createEvent() {
+            const event = {
+                //parsing
+            }
+            store.commit("pushEvent", event)
+        }
+    },
     data() {
         return {
             largeArrow,

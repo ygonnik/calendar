@@ -1,8 +1,10 @@
 export const calendarModule = {
     state: () => ({
         grid : [],
+        events: [],
         currentYear : new Date().getFullYear(),
-        currentMonth : new Date().getMonth()
+        currentMonth : new Date().getMonth(),
+        selectedDay: null
     }),
     mutations: {
         setGrid(state, payload) {
@@ -16,7 +18,16 @@ export const calendarModule = {
         },
         resetDate(state) {
             state.currentMonth = new Date().getMonth()
-        }
+        },
+        setSelectedDay(state, payload) {
+            state.selectedDay = payload
+        },
+        pushEvent(state, payload) {
+            state.events.push(payload)
+        },
+        // deleteEvent(state) {
+
+        // }
     },
     getters: {
         getGrid(state) {
@@ -35,6 +46,12 @@ export const calendarModule = {
         getCurrentYearText(state) {
             const yearDate = new Date(state.currentYear, state.currentMonth);
             return yearDate.getFullYear()
+        },
+        getSelectedDay(state) {
+            return state.selectedDay
+        },
+        getEvents(state) {
+            return state.events
         }
     }
 }
