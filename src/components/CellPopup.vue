@@ -36,6 +36,10 @@ export default {
             type: Boolean,
             default: false
         },
+        day: {
+            type: Object,
+            required: true
+        }
     },
     methods: {
         hideCellPopup() {
@@ -43,15 +47,15 @@ export default {
         },
         createEvent() {
             const event = {
-                year: new Date(this.getCurrentYear, this.getCurrentMonth).getFullYear(),
-                month: new Date(this.getCurrentYear, this.getCurrentMonth).getMonth(),
-                day: this.getSelectedDay,
+                year: this.day.dateYear,
+                month: this.day.dateMonth,
+                day: this.day.dateDay,
                 title: this.title,
-                date: this.date,
                 participants: this.participants,
                 description: this.description
             }
             store.commit("pushEvent", event)
+            this.$emit('refresh')
         }
     },
     data() {

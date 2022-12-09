@@ -6,7 +6,7 @@
                     <v-container class="control-buttons">
                         <v-btn class="button" @click="showQuickAddPopup"><p>Добавить</p></v-btn>
                         <QuickAddPopup v-model:QuickAddPopupShow="QuickAddPopupVisible"/>
-                        <v-btn class="button"><p>Обновить</p></v-btn>
+                        <v-btn class="button" @click="refresh"><p>Обновить</p></v-btn>
                     </v-container>
                     <v-container class="input-area">
                         <img class="search-img" :src="largeSearch">
@@ -37,7 +37,11 @@
                 </v-container>
                 <table class="main-table">
                     <tr class="main-row" v-for="week in this.getGrid" :key="week">
-                        <th class="main-cell" v-for="day in week" :key="day" @click="showCellPopup(day)">
+                        <th class="main-cell" v-for="day in week"
+                                                :key="day.dateDay + '-'
+                                                + day.dateMonth + '-'
+                                                + day.dateYear"
+                                                @click="showCellPopup(day)">
                             <div class="cell-heading">
                                 <p>{{day.heading}}</p>
                             </div>
@@ -47,7 +51,10 @@
                             <div class="cell-description">
                                 <p>{{day.description}}</p>
                             </div>
-                            <CellPopup v-model:CellPopupShow="day.CellPopupVisible"/>
+                            <CellPopup
+                                v-model:CellPopupShow="day.CellPopupVisible"
+                                :day="day"
+                                @refresh="refresh"/>
                         </th>
                     </tr>
                 </table>
@@ -79,19 +86,25 @@ function switchMonth() {
     const month = store.getters.getCurrentMonth
     let grid = []
     let splittedGrid = []
-    const dateMonth = new Date(year, month)
-    let startCell = dateMonth.getDay() === 0 ? 6 : dateMonth.getDay() - 1
-    let previousMonthDays = month === 0 ? 31 : new Date(year, month - 1).daysInMonth()
+    let eventDate
+    const previousMonth = new Date(year, month - 1)
+    const currentMonth = new Date(year, month)
+    const nextMonth = new Date(year, month + 1)
+    let startCell = currentMonth.getDay() === 0 ? 6 : currentMonth.getDay() - 1
+    let previousMonthDays = month === 0 ? 31 : previousMonth.daysInMonth()
     for (let i = 1; i <= startCell; i++) {
         let dayCreated = false
         store.getters.getEvents.forEach(event => {
+            eventDate = new Date(event.year, event.month)
             if (previousMonthDays - startCell + i === event.day &&
-                dateMonth.getMonth() === event.month &&
-                dateMonth.getFullYear() === event.year) {
+                previousMonth.getMonth() === eventDate.getMonth() &&
+                previousMonth.getFullYear() === eventDate.getFullYear()) {
                         const day =  {
                             heading: event.day,
                             title: event.title,
-                            date: event.date,
+                            dateDay: previousMonthDays - startCell + i,
+                            dateMonth: month - 1,
+                            dateYear: year,
                             participants: event.participants,
                             description: event.description,
                             CellPopupVisible : false
@@ -104,7 +117,9 @@ function switchMonth() {
             const day =  {
             heading: previousMonthDays - startCell + i,
             title: '',
-            date: '',
+            dateDay: previousMonthDays - startCell + i,
+            dateMonth: month - 1,
+            dateYear: year,
             participants: '',
             description: '',
             CellPopupVisible : false
@@ -112,16 +127,19 @@ function switchMonth() {
             grid.push(day)
         }
     }
-    for (let i = 1; i <= dateMonth.daysInMonth(); i++) {
+    for (let i = 1; i <= currentMonth.daysInMonth(); i++) {
         let dayCreated = false
         store.getters.getEvents.forEach(event => {
+            eventDate = new Date(event.year, event.month)
             if (i === event.day &&
-                dateMonth.getMonth() === event.month &&
-                dateMonth.getFullYear() === event.year) {
+                currentMonth.getMonth() === eventDate.getMonth() &&
+                currentMonth.getFullYear() === eventDate.getFullYear()) {
                         const day =  {
                             heading: event.day,
                             title: event.title,
-                            date: event.date,
+                            dateDay: i,
+                            dateMonth: month,
+                            dateYear: year,
                             participants: event.participants,
                             description: event.description,
                             CellPopupVisible : false
@@ -134,7 +152,9 @@ function switchMonth() {
             const day =  {
             heading: i,
             title: '',
-            date: '',
+            dateDay: i,
+            dateMonth: month,
+            dateYear: year,
             participants: '',
             description: '',
             CellPopupVisible : false
@@ -145,13 +165,16 @@ function switchMonth() {
     for (let i = 1; i < gridSize; i++) {
         let dayCreated = false
         store.getters.getEvents.forEach(event => {
+            eventDate = new Date(event.year, event.month)
             if (i === event.day &&
-                dateMonth.getMonth() === event.month &&
-                dateMonth.getFullYear() === event.year) {
+                nextMonth.getMonth() === eventDate.getMonth() &&
+                nextMonth.getFullYear() === eventDate.getFullYear()) {
                         const day =  {
                             heading: event.day,
                             title: event.title,
-                            date: event.date,
+                            dateDay: i,
+                            dateMonth: month + 1,
+                            dateYear: year,
                             participants: event.participants,
                             description: event.description,
                             CellPopupVisible : false
@@ -164,7 +187,9 @@ function switchMonth() {
             const day =  {
             heading: i,
             title: '',
-            date: '',
+            dateDay: i,
+            dateMonth: month + 1,
+            dateYear: year,
             participants: '',
             description: '',
             CellPopupVisible : false
@@ -176,7 +201,7 @@ function switchMonth() {
         splittedGrid.push(grid.slice(7 * (i - 1), 7 * i))
     }
     store.commit("setGrid", splittedGrid)
-    }
+}
     
 export default {
     beforeCreate() {
@@ -202,6 +227,9 @@ export default {
         },
         showQuickAddPopup() {
             this.QuickAddPopupVisible = true
+        },
+        refresh() {
+            switchMonth()
         }
     },
     computed: {
