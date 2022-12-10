@@ -11,6 +11,7 @@
                     <v-container class="input-area">
                         <img class="search-img" :src="largeSearch">
                         <input class="search-input" placeholder="Событие, дата или участник"/>
+                        <SearchPopup/>
                     </v-container>
                 </v-container>
             </v-container>
@@ -20,7 +21,7 @@
                 <v-container class="bottom-row">
                     <v-container class="month-control">
                         <v-btn class="button-left" @click="previousMonth">
-                            <v-container class="button-icon-left">
+                            <v-container :class="{'button-icon-left' : !QuickAddPopupVisible}">
                                 <img class="arrow-left" :src="largeArrow">
                             </v-container>
                         </v-btn>
@@ -63,7 +64,6 @@
                     </tr>
                 </table>
             </v-container>
-            <SearchPopup/>
         </v-container>
     </v-container>
 </template>
