@@ -50,6 +50,8 @@ export default {
                 year: this.day.dateYear,
                 month: this.day.dateMonth,
                 day: this.day.dateDay,
+                dateText: new Date(this.day.dateYear, this.day.dateMonth, this.day.dateDay)
+                .toLocaleDateString('ru-RU', { month: 'long', day: 'numeric' }),
                 title: this.title,
                 participants: this.participants,
                 description: this.description

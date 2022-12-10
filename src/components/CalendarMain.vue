@@ -37,11 +37,11 @@
                 </v-container>
                 <table class="main-table">
                     <tr class="main-row" v-for="week in this.getGrid" :key="week">
-                        <th class="main-cell" v-for="day in week"
+                        <th :class="{'main-cell': !day.haveEvent, 'main-cell-event': day.haveEvent}" v-for="day in week"
                                                 :key="day.dateDay + '-'
                                                 + day.dateMonth + '-'
                                                 + day.dateYear"
-                                                @click="showCellPopup(day)">
+                                                @click="showPopup(day)">
                             <div class="cell-heading">
                                 <p>{{day.heading}}</p>
                             </div>
@@ -51,24 +51,27 @@
                             <div class="cell-description">
                                 <p>{{day.description}}</p>
                             </div>
-                            <CellPopup
+                            <CellPopup 
                                 v-model:CellPopupShow="day.CellPopupVisible"
+                                :day="day"
+                                @refresh="refresh"/>
+                            <OverviewPopup
+                                v-model:OverviewPopupShow="day.OverviewPopupVisible"
                                 :day="day"
                                 @refresh="refresh"/>
                         </th>
                     </tr>
                 </table>
             </v-container>
+            <SearchPopup/>
         </v-container>
-        
-    <!-- <QuickAddPopup/> -->
-    <!-- <OverviewPopup/> -->
     </v-container>
 </template>
 <script>
 import CellPopup from './CellPopup.vue';
 import QuickAddPopup from './QuickAddPopup.vue';
-//import OverviewPopup from './OverviewPopup.vue';
+import OverviewPopup from './OverviewPopup.vue';
+import SearchPopup from './SearchPopup.vue';
 import largeSearch from '../../public/largeSearch.png';
 import largeArrow from '../../public/largeArrow.png';
 import store from '@/store';
@@ -87,6 +90,9 @@ function switchMonth() {
     let grid = []
     let splittedGrid = []
     let eventDate
+    const weekdays = ['Понедельник, ', 'Вторник, ', 'Среда, ',
+                        'Четверг, ', 'Пятница, ', 'Суббота, ', 'Воскресенье, ']
+    let weekdaysIter = 0
     const previousMonth = new Date(year, month - 1)
     const currentMonth = new Date(year, month)
     const nextMonth = new Date(year, month + 1)
@@ -99,30 +105,36 @@ function switchMonth() {
             if (previousMonthDays - startCell + i === event.day &&
                 previousMonth.getMonth() === eventDate.getMonth() &&
                 previousMonth.getFullYear() === eventDate.getFullYear()) {
-                        const day =  {
-                            heading: event.day,
-                            title: event.title,
-                            dateDay: previousMonthDays - startCell + i,
-                            dateMonth: month - 1,
-                            dateYear: year,
-                            participants: event.participants,
-                            description: event.description,
-                            CellPopupVisible : false
-                        }
-                        dayCreated = true
-                        grid.push(day)
+                    const day =  {
+                        heading: weekdaysIter >= weekdays.length ? event.day : weekdays[weekdaysIter++] + event.day,
+                        title: event.title,
+                        dateDay: previousMonthDays - startCell + i,
+                        dateMonth: month - 1,
+                        dateYear: year,
+                        dateText : event.dateText,
+                        participants: event.participants,
+                        description: event.description,
+                        CellPopupVisible : false,
+                        OverviewPopupVisible : false,
+                        haveEvent: true
                     }
+                    dayCreated = true
+                    grid.push(day)
+                }
             });
         if (!dayCreated) {
             const day =  {
-            heading: previousMonthDays - startCell + i,
+            heading: weekdaysIter >= weekdays.length ? previousMonthDays - startCell + i : weekdays[weekdaysIter++] + (previousMonthDays - startCell + i),
             title: '',
             dateDay: previousMonthDays - startCell + i,
             dateMonth: month - 1,
             dateYear: year,
+            dateText : '',
             participants: '',
             description: '',
-            CellPopupVisible : false
+            CellPopupVisible : false,
+            OverviewPopupVisible : false,
+            haveEvent: false
             }
             grid.push(day)
         }
@@ -135,14 +147,17 @@ function switchMonth() {
                 currentMonth.getMonth() === eventDate.getMonth() &&
                 currentMonth.getFullYear() === eventDate.getFullYear()) {
                         const day =  {
-                            heading: event.day,
+                            heading: weekdaysIter >= weekdays.length ? event.day : weekdays[weekdaysIter++] + event.day,
                             title: event.title,
                             dateDay: i,
                             dateMonth: month,
                             dateYear: year,
+                            dateText : event.dateText,
                             participants: event.participants,
                             description: event.description,
-                            CellPopupVisible : false
+                            CellPopupVisible : false,
+                            OverviewPopupVisible : false,
+                            haveEvent: true
                         }
                         dayCreated = true
                         grid.push(day)
@@ -150,14 +165,17 @@ function switchMonth() {
             });
         if (!dayCreated) {
             const day =  {
-            heading: i,
+            heading: weekdaysIter >= weekdays.length ? i : weekdays[weekdaysIter++] + i,
             title: '',
             dateDay: i,
             dateMonth: month,
             dateYear: year,
+            dateText : '',
             participants: '',
             description: '',
-            CellPopupVisible : false
+            CellPopupVisible : false,
+            OverviewPopupVisible : false,
+            haveEvent: false
             }
             grid.push(day)
         }
@@ -170,14 +188,17 @@ function switchMonth() {
                 nextMonth.getMonth() === eventDate.getMonth() &&
                 nextMonth.getFullYear() === eventDate.getFullYear()) {
                         const day =  {
-                            heading: event.day,
+                            heading: weekdaysIter >= weekdays.length ? event.day : weekdays[weekdaysIter++] + event.day,
                             title: event.title,
                             dateDay: i,
                             dateMonth: month + 1,
                             dateYear: year,
+                            dateText : event.dateText,
                             participants: event.participants,
                             description: event.description,
-                            CellPopupVisible : false
+                            CellPopupVisible : false,
+                            OverviewPopupVisible : false,
+                            haveEvent: true
                         }
                         dayCreated = true
                         grid.push(day)
@@ -185,14 +206,17 @@ function switchMonth() {
             });
         if (!dayCreated) {
             const day =  {
-            heading: i,
+            heading: weekdaysIter >= weekdays.length ? i : weekdays[weekdaysIter++] + i,
             title: '',
             dateDay: i,
             dateMonth: month + 1,
             dateYear: year,
+            dateText : '',
             participants: '',
             description: '',
-            CellPopupVisible : false
+            CellPopupVisible : false,
+            OverviewPopupVisible : false,
+            haveEvent: false
             }
             grid.push(day)
         }
@@ -222,7 +246,9 @@ export default {
             store.commit("resetDate")
             switchMonth()
         },
-        showCellPopup(day) {
+        showPopup(day) {
+            day.haveEvent ?
+            day.OverviewPopupVisible = true :
             day.CellPopupVisible = true
         },
         showQuickAddPopup() {
@@ -240,12 +266,14 @@ export default {
             getCurrentMonthText: 'getCurrentMonthText',
             getCurrentYearText: 'getCurrentYearText',
             getEvents: 'getEvents',
-        })
+        }),
+
     },
     components: {
     CellPopup,
     QuickAddPopup,
-    //OverviewPopup
+    OverviewPopup,
+    SearchPopup,
     },
     data() {
         return {

@@ -125,7 +125,7 @@ text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 
 .button:hover {
     background: #27A1FF;
-    cursor: pointer;
+    cursor: default;
 }
 
 .button:active {
@@ -476,6 +476,58 @@ background: #FFFFFF;
 border: 1px solid #292929;
 }
 
+.main-cell:active {
+/* light-100 */
+background: #FFFFFF;
+/* dark-200 */
+border: 1px solid#292929;
+/* cell-active */
+box-shadow: 0px 0px 10px 2px #0271C7;
+}
+
+.main-cell:hover {
+/* neutral-100 */
+background: #F4F4F4;
+/* dark-200 */
+border: 1px solid #292929;
+}
+
+.main-cell-event {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px;
+gap: 8px;
+
+
+width: 127px;
+height: 104px;
+
+/* light-100 */
+
+/* blue-100 */
+
+background: #C2E4FE;
+/* dark-200 */
+
+border: 1px solid #292929;
+}
+
+.main-cell-event:active {
+background: #C2E4FE;
+/* dark-200 */
+border: 1px solid #292929;
+/* cell-active */
+box-shadow: 0px 0px 10px 2px #0271C7;
+}
+
+.main-cell-event:hover {
+/* blue-200 */
+background: #27A1FF;
+/* dark-200 */
+border: 1px solid #292929;
+}
+
 .cell-heading {
 display: flex;
 flex-direction: row;
@@ -487,9 +539,6 @@ width: 126px;
 left: 8px;
 top: 8px;
 border-radius: 0px;
-
-
-
 }
 
 .cell-title {
@@ -524,7 +573,6 @@ border-radius: 0px;
 }
 
 .cell-heading p {
-
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
