@@ -51,9 +51,10 @@ export default {
         editEvent() {
             this.deleteEvent()
             const event = {
-                year: this.day.dateYear, //todo
+                year: this.day.dateYear,
                 month: this.day.dateMonth,
                 day: this.day.dateDay,
+                dateText: this.day.dateText,
                 title: this.day.title,
                 participants: this.day.participants,
                 description: this.description

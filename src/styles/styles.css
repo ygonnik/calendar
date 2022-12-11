@@ -292,7 +292,7 @@ color: #6B6B6B;
     user-select: none;
 }
 
-.mounth-control-text-container {
+.month-control-text-container {
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -303,9 +303,9 @@ width: 108px;
 height: 21px;
 }
 
-.mounth-control-text {
-width: 108px;
-height: 21px;
+.month-control-text {
+/* width: 108px;
+height: 21px; */
 
 /* font-month */
 

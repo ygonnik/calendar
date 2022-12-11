@@ -27,8 +27,8 @@
                                 <img class="arrow-left" :src="largeArrow">
                             </v-container>
                         </v-btn>
-                        <v-container class="mounth-control-text-container">
-                            <p class="mounth-control-text">{{this.getCurrentMonthText + " " + this.getCurrentYearText}}</p>
+                        <v-container class="mouth-control-text-container">
+                            <p class="month-control-text">{{this.getCurrentMonthText[0].toUpperCase() + this.getCurrentMonthText.slice(1) + " " + this.getCurrentYearText}}</p>
                         </v-container>
                         <v-btn class="button-right" @click="nextMonth">
                             <v-container class="button-icon-right">
