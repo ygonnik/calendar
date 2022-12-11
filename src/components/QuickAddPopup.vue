@@ -8,10 +8,10 @@
                 </div>
             </v-container>
             <v-container class="quick-add-frame2">
-                <input placeholder="25 ноября, Кутеж, Серж"/>
+                <input :class="{'quick-add-frame2-input': !this.invalidInput, 'quick-add-frame2-input-invalid': this.invalidInput,}" v-model="eventInput" placeholder="25 ноября, Кутеж, Серж"/>
             </v-container>
             <v-container class="quick-add-frame3">
-                <v-btn class="quick-add-frame3-extra-button"><p>Создать</p></v-btn>
+                <v-btn class="quick-add-frame3-extra-button" @click="createEvent"><p>Создать</p></v-btn>
             </v-container>
         </v-container>
     </v-container>
@@ -30,18 +30,44 @@ export default {
     methods: {
         hideQuickAddPopup() {
             this.$emit('update:QuickAddPopupShow', false)
+            this.eventInput = ''
+            this.invalidInput = false
         },
         createEvent() {
-            const event = {
-                //parsing
+            this.invalidInput = false
+            const months = ['января', 'февраля', 'марта', 'апреля',
+                            'мая', 'июня', 'июля', 'августа',
+                            'сентября', 'октября', 'ноября', 'декабря']
+            const splitedInput = this.eventInput.split(',')
+            const splitedInputDate = splitedInput[0].split(' ')
+            const inputMonthIndex = months.findIndex(month => month === splitedInputDate[1])
+            if (splitedInputDate[0] > 0 && splitedInputDate[0] < 32 && inputMonthIndex !== -1) {
+                const event = {
+                year: store.getters.getCurrentYearText,
+                month: inputMonthIndex,
+                day: Number(splitedInputDate[0]),
+                dateText: new Date(store.getters.getCurrentYearText, inputMonthIndex, splitedInputDate[0])
+                .toLocaleDateString('ru-RU', { month: 'long', day: 'numeric' }),
+                title: splitedInput[1],
+                participants: splitedInput.slice(2).join(', '),
+                description: ''
+                }
+                store.commit("pushEvent", event)
+                this.$emit('refresh')
+                this.eventInput = ''
+                this.hideQuickAddPopup()
             }
-            store.commit("pushEvent", event)
+            else {
+                this.invalidInput = true
+            }
         }
     },
     data() {
         return {
             largeArrow,
-            largeCross
+            largeCross,
+            eventInput: '',
+            invalidInput : false
         };
     }
 }

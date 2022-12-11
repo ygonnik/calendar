@@ -24,7 +24,7 @@
             </v-container>
             <v-container class="overview-control-buttons-container">
                 <v-btn class="extra-button-ok" @click="editEvent"><p>Готово</p></v-btn>
-                <v-btn class="extra-button-delete"><p>Удалить</p></v-btn>
+                <v-btn class="extra-button-delete" @click="deleteEvent"><p>Удалить</p></v-btn>
             </v-container>
         </v-container>
     </v-container>
@@ -49,15 +49,25 @@ export default {
             this.$emit('update:OverviewPopupShow', false)
         },
         editEvent() {
+            this.deleteEvent()
             const event = {
                 year: this.day.dateYear, //todo
                 month: this.day.dateMonth,
                 day: this.day.dateDay,
-                title: this.title,
-                participants: this.participants,
+                title: this.day.title,
+                participants: this.day.participants,
                 description: this.description
             }
             store.commit("pushEvent", event)
+            this.$emit('refresh')
+        },
+        deleteEvent() {
+            const event = {
+                year: this.day.dateYear, //todo
+                month: this.day.dateMonth,
+                day: this.day.dateDay,
+            }
+            store.commit("deleteEvent", event)
             this.$emit('refresh')
         }
     },

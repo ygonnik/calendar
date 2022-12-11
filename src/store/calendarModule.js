@@ -15,15 +15,27 @@ export const calendarModule = {
         decrementCurrentMonth(state) {
             state.currentMonth--
         },
+        setCurrentMonth(state, payload) {
+            state.currentMonth = payload
+        },
+        setCurrentYear(state, payload) {
+            state.currentYear = payload
+        },
         resetDate(state) {
             state.currentMonth = new Date().getMonth()
+        },
+        setEvents(state, payload) {
+            state.events = payload
         },
         pushEvent(state, payload) {
             state.events.push(payload)
         },
-        // deleteEvent(state) {
-
-        // }
+        deleteEvent(state, payload) {
+            const eventIndex = state.events.findIndex(event => event.day === payload.day &&
+                                                        event.month === payload.month &&
+                                                        event.year === payload.year)
+            state.events.splice(eventIndex)
+        }
     },
     getters: {
         getGrid(state) {

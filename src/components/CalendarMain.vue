@@ -5,13 +5,15 @@
                 <v-container class="control">
                     <v-container class="control-buttons">
                         <v-btn class="button" @click="showQuickAddPopup"><p>Добавить</p></v-btn>
-                        <QuickAddPopup v-model:QuickAddPopupShow="QuickAddPopupVisible"/>
+                        <QuickAddPopup v-model:QuickAddPopupShow="QuickAddPopupVisible" @refresh="refresh"/>
                         <v-btn class="button" @click="refresh"><p>Обновить</p></v-btn>
                     </v-container>
                     <v-container class="input-area">
                         <img class="search-img" :src="largeSearch">
-                        <input class="search-input" placeholder="Событие, дата или участник"/>
-                        <SearchPopup/>
+                        <input class="search-input" v-model="searchInputText" placeholder="Событие, дата или участник"/>
+                        <SearchPopup v-model:SeacrhInputText="searchInputText"
+                                    v-model:searchResults="searchResults"
+                                    @refresh="refresh"/>
                     </v-container>
                 </v-container>
             </v-container>
@@ -226,9 +228,13 @@ function switchMonth() {
     }
     store.commit("setGrid", splittedGrid)
 }
-    
+
 export default {
     beforeCreate() {
+        const localEvents = localStorage.getItem('events')
+        if (localEvents !== null) {
+            store.commit("setEvents", JSON.parse(localEvents))
+        }
         switchMonth()
     },
     methods: {
@@ -254,8 +260,39 @@ export default {
         showQuickAddPopup() {
             this.QuickAddPopupVisible = true
         },
+        search() {
+            if (this.searchInputText !== '') {
+                let searchResults = []
+                store.getters.getEvents.forEach(event => {
+                    if (event.title.indexOf(this.searchInputText) !== -1 ||
+                        event.date.indexOf(this.searchInputText) !== -1 ||
+                        event.participants.indexOf(this.searchInputText) !== -1) {
+                        const searchResult = {
+                            dateDay: event.day,
+                            dateMonth: event.month,
+                            dateYear: event.year,
+                            title: event.title,
+                            date: event.dateText
+                        }
+                        searchResults.push(searchResult)
+                    }
+                });
+                this.searchResults = searchResults
+            }
+            else {
+                let searchResults = []
+                this.searchResults = searchResults
+            }
+        },
         refresh() {
             switchMonth()
+            localStorage.setItem('events', JSON.stringify(store.getters.getEvents))
+            this.searchInputText = ''
+        }
+    },
+    watch: {
+        searchInputText() {
+            this.search()
         }
     },
     computed: {
@@ -280,6 +317,8 @@ export default {
             largeSearch,
             largeArrow,
             QuickAddPopupVisible : false,
+            searchInputText: '',
+            searchResults: []
         };
     }
 }
