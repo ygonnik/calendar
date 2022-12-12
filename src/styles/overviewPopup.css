@@ -1,6 +1,6 @@
 .overview-popup-container {
 position: relative;
-top: -108px; left: 151px;
+top: -96px; left: 149px;
 width: 300px;
 height: 302px;
 
@@ -9,7 +9,7 @@ filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
 
 .overview-decorate {
 position: absolute;
-top: 10px; left: -19px;
+top: 10px; left: -81px;
 width: 24px;
 height: 13.55px;
 
