@@ -1,24 +1,16 @@
-# calendar
+# Календарь
 
-## Project setup
+### Установка
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Сайт доступен по адресу http://localhost:8080/
+### Известные проблемы
+* Инпут для поиска урезается при появлении результатов на ширину ползунка.
+* Кнопка "Обновить" сдвигается при появлении формы для быстрого добавления события.
+* Двойные рамки.
