@@ -38,10 +38,13 @@ export default {
             const months = ['января', 'февраля', 'марта', 'апреля',
                             'мая', 'июня', 'июля', 'августа',
                             'сентября', 'октября', 'ноября', 'декабря']
-            const splitedInput = this.eventInput.split(',')
+            let splitedInput = this.eventInput.split(',')
+            if (splitedInput.length < 3) {
+                splitedInput = this.eventInput.split(', ')
+            }
             const splitedInputDate = splitedInput[0].split(' ')
             const inputMonthIndex = months.findIndex(month => month === splitedInputDate[1])
-            if (splitedInputDate[0] > 0 && splitedInputDate[0] < 32 && inputMonthIndex !== -1) {
+            if (splitedInputDate[0] > 0 && splitedInputDate[0] < 32 && inputMonthIndex !== -1 && splitedInput.length > 2) {
                 const event = {
                 year: store.getters.getCurrentYearText,
                 month: inputMonthIndex,
