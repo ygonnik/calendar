@@ -1,5 +1,6 @@
 # Календарь
 [GitHub Pages](https://ygonnik.github.io/calendar/)
+
 [ТЗ](https://interview.pages.iqdev.digital/junior-frontend-developer/)
 ### Установка
 ```
